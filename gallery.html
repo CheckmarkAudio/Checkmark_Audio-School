@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery | Checkmark Audio School</title>
+
+  <!-- Link to your main stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Link to your JavaScript (handles animations, modal, etc.) -->
+  <script src="js/scripts.js" defer></script>
+</head>
+<body>
+  <!-- ============================
+       HEADER & NAVIGATION
+       (Copy this from your other pages exactly so the navbar stays consistent)
+  ============================ -->
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo animate">
+        <img
+          src="https://static.wixstatic.com/media/afbb39_c0cc5475424d43e2ae4578ad74623c72~mv2.png"
+          alt="Checkmark Audio Logo"
+          class="logo-icon animate"
+        />
+        CHECKMARK SCHOOL OF AUDIO
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="curriculum.html">Curriculum</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================
+         1. HERO BANNER SECTION
+         - Replace `images/gallery-hero.jpg` with your own studio image.
+         - Adjust overlay opacity or remove it if you prefer no darkening effect.
+    ============================ -->
+    <section class="gallery-hero animate">
+      <!-- Background image and overlay are handled via CSS -->
+      <div class="overlay"></div>
+      <div class="container">
+        <h1>Student Showcases &amp; Success Stories</h1>
+      </div>
+    </section>
+    <!-- ============================
+         5. VIDEO INTERVIEWS
+         - Place MP4 files in a `videos/` folder next to this HTML.
+         - Copy one .video-card block to add more interview clips.
+    ============================ -->
+    <section class="container animate">
+      <h2>Meet Our Graduates</h2>
+      <div class="gallery-grid">
+        <!-- Video Interview Card #1 -->
+        <div class="gallery-card video-card animate">
+          <h3>Alumni Testimonials</h3>
+          <!-- Use a small MP4 (<10 MB) so load times aren’t too long -->
+          <video
+            width="100%"
+            controls
+            preload="none"
+	    poster="https://static.wixstatic.com/media/afbb39_4d69b42394864543baa18139ac165ee5~mv2.jpg"
+            src="https://video.wixstatic.com/video/afbb39_2c44660fa3c140fca9327482c5e33c44/1080p/mp4/file.mp4"
+          ></video>
+        </div>
+        <!-- Duplicate for more video interviews -->
+        <!--
+        <div class="gallery-card video-card animate">
+          <h3>Interview: Carlos M.</h3>
+          <video width="100%" controls preload="none" src="videos/carlos-interview.mp4"></video>
+        </div>
+
+        -->
+      </div>
+    </section>
+
+  </main>
+    <!-- ============================
+         2. TESTIMONIALS CAROUSEL
+         - Each .testimonial-card represents one student quote.
+         - To add more testimonials, copy one <div class="testimonial-card">…</div>
+           and paste it inside the .testimonial-grid container.
+         - Replace `images/student1.jpg` with the actual headshot path.
+         - Adjust quotes and footer names as needed.
+    ============================ -->
+    <section class="container animate">
+      <h2>What Our Students Say</h2>
+      <div class="gallery-grid testimonial-grid">
+        <!-- Testimonial Card #1 -->
+        <div class="gallery-card testimonial-card animate">
+          <!-- Student Photo (circular mask can be applied via CSS .testimonial-photo) -->
+          <img
+            src="https://static.wixstatic.com/media/afbb39_c1c36659049a40b4a56c8f4d95cd2725~mv2.jpg"
+            alt="student1"
+            class="testimonial-photo"
+          />
+          <blockquote>
+            “Checkmark Audio completely transformed my approach to mixing. The one-on-one feedback and real studio environment helped me develop skills I’d only dreamed of before.”
+            <footer>— Antion Aramio, 6 Month Complete Course</footer>
+          </blockquote>
+        </div>
+	 <div class="gallery-card testimonial-card animate">
+          <!-- Student Photo (circular mask can be applied via CSS .testimonial-photo) -->
+          <img
+            src="https://static.wixstatic.com/media/afbb39_43c5837f0ba64a0da6c27f5d642a8a4c~mv2.jpg"
+            alt="student2"
+            class="testimonial-photo"
+          />
+          <blockquote>
+            “I joined feeling intimidated by all the gear—now I’m confidently running drum sessions and vocal tracking on my own. The instructors truly care about your growth.”
+            <footer>— Anne House, 6 Month Complete Course</footer>
+          </blockquote>
+        </div>
+	 <div class="gallery-card testimonial-card animate">
+          <!-- Student Photo (circular mask can be applied via CSS .testimonial-photo) -->
+          <img
+            src="https://static.wixstatic.com/media/afbb39_c1b5f880250640e798b36054f9fba3b5~mv2.jpg"
+            alt="student3"
+            class="testimonial-photo"
+          />
+          <blockquote>
+            “By Week 2 I was already building a portfolio-ready mix. The project-based modules kept me engaged and gave me real results fast.”
+            <footer>— Marz, 6 Month Complete Course</footer>
+          </blockquote>
+        </div>
+	
+
+        <!-- Duplicate this block for each additional testimonial -->
+        <!--
+        <div class="gallery-card testimonial-card animate">
+          <img src="images/student2.jpg" alt="John Smith" class="testimonial-photo" />
+          <blockquote>
+            “Replace this text with your student’s quote.”
+            <footer>— John Smith, 12-Week Comprehensive Grad</footer>
+          </blockquote>
+        </div>
+        -->
+      </div>
+    </section>
+
+    <!-- ============================
+         3. AUDIO SHOWCASE (“Before & After”)
+         - Each .audio-card shows a raw vs. final mix.
+         - Place the raw/mp3 files in an `audio/` folder next to this HTML.
+         - Copy one .audio-card block to add more examples.
+    ============================ -->
+    <section class="container animate">
+  <h2>Before &amp; After: Hear the Difference</h2>
+  <div class="gallery-grid">
+
+    <!-- Audio Card #1: A/B Switcher -->
+    <div class="gallery-card audio-card animate ab-card" data-pair-id="1">
+      <h3>Acoustic Song Mix</h3>
+
+      <!-- Toggle Slider/Button -->
+      <div class="ab-toggle">
+        <span class="ab-label">Before</span>
+        <label class="switch">
+          <input type="checkbox" id="ab-switch-1" />
+          <span class="slider"></span>
+        </label>
+        <span class="ab-label">After</span>
+      </div>
+
+      <!-- Instruction Text -->
+      <p class="ab-instruction">
+        Use the toggle above to compare the raw stems vs. the final mix.
+      </p>
+
+      <!-- Audio Players (stacked; only one is visible at a time) -->
+      <div class="audio-wrapper ab-wrapper">
+        <!-- “Before” (raw stems) -->
+        <audio
+          id="before-audio-1"
+          class="ab-audio before-audio"
+          controls
+          preload="none"
+          src="https://static.wixstatic.com/mp3/afbb39_8cff850c1a2d49e484ef1e0a01daf717.mp3"
+        ></audio>
+
+        <!-- “After” (final mix), initially muted/hidden -->
+        <audio
+          id="after-audio-1"
+          class="ab-audio after-audio"
+          controls
+          preload="none"
+          src="https://static.wixstatic.com/mp3/afbb39_6114d6a8b1374bbe85f2fd9cdc611f3b.mp3"
+          muted
+        ></audio>
+      </div>
+    </div>
+
+
+
+    <!-- (If you want to add a second A/B card, copy the div above, increment data-pair-id to "2", IDs to before-audio-2/after-audio-2, and ab-switch-2, then update your audio src paths.) -->
+
+  </div>
+</section>
+<!-- ===============================
+     Audio Playlist (Vertical Scroll)
+     =============================== -->
+<section class="container animate">
+  <h2>Audio Showcase: Scroll Through Our Top Tracks</h2>
+
+  <!-- Vertical scrolling container (fixed height) -->
+  <div class="audio-playlist-vertical">
+    <!-- Audio Item #1 -->
+    <div class="audio-item">
+      <h3>Bad For My Health(Richard Baca)</h3>
+      <audio controls preload="none" src="https://static.wixstatic.com/mp3/afbb39_b788f39440ae4aaab6c830d8f13aa6c6.wav"></audio>
+    </div>
+
+    <!-- Audio Item #2 -->
+    <div class="audio-item">
+      <h3>What's the Meaning(David Apodaca)</h3>
+      <audio controls preload="none" src="https://static.wixstatic.com/mp3/afbb39_6fb956e41d6944bd860f1f84e5437634.m4a"></audio>
+    </div>
+
+    <!-- Audio Item #3 -->
+    <div class="audio-item">
+      <h3>Hoops(Christian Owens)</h3>
+      <audio controls preload="none" src="https://static.wixstatic.com/mp3/afbb39_a074553765d24a4695d0a6dc66282cb3.mp3"></audio>
+    </div>
+
+    <!-- Audio Item #4 -->
+    <div class="audio-item">
+      <h3>Wake Up(Anne House)</h3>
+      <audio controls preload="none" src="https://static.wixstatic.com/mp3/afbb39_1a1caf43e3644929b8819144f18b7d48.mp3"></audio>
+    </div>
+
+    <!-- Copy & paste .audio-item to add more tracks -->
+  </div>
+</section>
+
+    <!-- ============================
+         4. CASE STUDIES
+         - Each .case-card describes a project, the student, tools used, and result.
+         - Place the final mix clip in an `audio/` folder.
+         - Copy one .case-card block to add more case studies.
+    ============================ -->
+    <section class="container animate">
+      <h2>Project Spotlights</h2>
+      <div class="gallery-grid">
+        <!-- Case Study Card #1 -->
+        <div class="gallery-card case-card animate">
+          <h3>Indie Rock EP Mix</h3>
+          <p><strong>Student:</strong> Richard Baca (6 Month Full Course)</p>
+          <p>
+            <strong>Context:</strong> Local indie band needed stem mix and vocal recorded and mastered for digital release.
+          </p>
+          
+          <!-- Final mix clip -->
+          <div class="audio-wrapper">
+            <audio controls preload="none" src="https://static.wixstatic.com/mp3/afbb39_d629b6a3c1e64dc28669bd82a2522b38.mp3"></audio>
+          </div>
+          <p><strong>Result:</strong> Client praised clarity.</p>
+        </div>
+        <!-- Duplicate for more case studies -->
+        <!--
+        <div class="gallery-card case-card animate">
+          <h3>Project Title Here</h3>
+          <p><strong>Student:</strong> [Name] ([Course])</p>
+          <p><strong>Context:</strong> Describe the project scope and tools used.</p>
+          <p><strong>Challenge & Solution:</strong> Describe what the student learned/applied.</p>
+          <div class="audio-wrapper">
+            <audio controls preload="none" src="audio/your-project-mix.mp3"></audio>
+          </div>
+          <p><strong>Result:</strong> Outcome statement (streams, feedback, etc.).</p>
+        </div>
+        -->
+      </div>
+    </section>
+
+
+
+  <!-- ============================
+       FOOTER (Same as other pages)
+  ============================ -->
+  <footer>
+    <div class="container">
+      <p>© 2025 Checkmark Audio School</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkmark Audio School</title>
+
+  <!-- 1) Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- 2) EmailJS SDK (same public key as pricing page) -->
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
+  ></script>
+  <script type="text/javascript">
+    // Initialize EmailJS with your public (User) key
+    emailjs.init("N5UpWeOs8jdOTQitf");
+  </script>
+
+  <!-- 3) Your existing scripts.js -->
+  <script src="js/scripts.js" defer></script>
+</head>
+<body>
+  <!-- Header & Navigation (unchanged) -->
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo animate">
+        <img src="https://static.wixstatic.com/media/afbb39_c0cc5475424d43e2ae4578ad74623c72~mv2.png" alt="Checkmark Audio Logo" class="logo-icon animate" />
+        CHECKMARK SCHOOL OF AUDIO
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="curriculum.html">Curriculum</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <h1 class="animate">Launch Your Career in Audio Engineering</h1>
+          <p class="animate">Hands-on, in-person training in Albuquerque’s premier studio</p>
+          <a href="#contact" class="btn animate">Enroll Today</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Our Curriculum -->
+    <section class="container animate" id="about-curriculum">
+  <h2>About Our Curriculum</h2>
+
+  <p>
+    At Checkmark School of Audio, we’ve crafted a curriculum that mirrors exactly what happens
+    in today’s top commercial studios. From your very first class, you’ll be rolling up your sleeves
+    and working on real-world projects—no theory lectures, no busywork. You’ll learn by doing,
+    guided every step of the way by instructors with decades of professional experience.
+  </p>
+
+  <p>
+    You have two powerful options:  
+    <strong>Choose any one of our 2-month modules</strong> to focus intensely on Production,
+    Recording, or Mixing &amp; Mastering—or  
+    <strong>go all-in with our Complete Course Package</strong>, where you’ll progress through
+    all three modules over six months, plus receive bonus career coaching and 1:1 mentoring.
+  </p>
+
+  <ul class="feature-list">
+    <li><strong>Hands-On Studio Training:</strong> Use the same consoles, mics, and outboard gear
+      you’ll find in pro facilities.</li>
+    <li><strong>Project-Based Learning:</strong> Build your own tracks, record live artists, and mix
+      release-ready masters as you learn.</li>
+    <li><strong>Industry Expertise:</strong> Get personalized feedback from veteran engineers and
+      producers who’ve worked on major-label releases.</li>
+    <li><strong>Flexible Pathways:</strong> Tailor your journey—dip into a single module or complete
+      the full 6-month program for maximum depth.</li>
+  </ul>
+
+  <p>
+    Ready to see every lesson plan, project brief, and session outline? </p> 
+  <p>
+    <a href="curriculum.html#complete-curriculum" class="btn">View Complete Curriculum</a>
+  </p>
+</section>
+
+
+    <!-- Key Benefits -->
+    <section class="benefits container grid-4">
+      <div class="benefit card animate">
+        <img src="https://static.wixstatic.com/media/afbb39_80e631033a6945ba9d263cf2b60414da~mv2.jpg" alt="Industry-standard gear" class="benefit-image">
+        <h3>Industry-Standard Gear</h3>
+        <p>Learn on the same consoles, mics &amp; outboard used by pros.</p>
+      </div>
+      <div class="benefit card animate">
+        <img src="https://static.wixstatic.com/media/afbb39_f6073c99432647a28b39fae03c255d86~mv2.jpg" alt="Small class sizes" class="benefit-image">
+        <h3>Small Class Sizes</h3>
+        <p>Get personalized feedback from expert instructors.</p>
+      </div>
+      <div class="benefit card animate">
+        <img src="https://static.wixstatic.com/media/afbb39_4c7cfe3ab2cb48fdbd14be8f36b89bc7~mv2.jpg" alt="Real-world projects" class="benefit-image">
+        <h3>Real-World Projects</h3>
+        <p>Build a portfolio-ready mix by Week 2 of the 8-Week Course.</p>
+      </div>
+    </section>
+
+    <!-- Lead Magnet -->
+<section class="lead-form container animate">
+  <div class="lead-content">
+    <h2>Download Our Course Guide</h2>
+    <p>Get the full breakdown of modules, schedules and pricing—instantly in PDF form.</p>
+    <a href="https://afbb39a0-d929-4d55-ad73-bc43f297b621.usrfiles.com/ugd/afbb39_27aac21dd5f54c3182723a336c150c93.pdf" download class="btn animate">
+      Download Guide (PDF)
+    </a>
+  </div>
+  <div class="lead-image">
+    <img src="https://static.wixstatic.com/media/afbb39_30ee6c4275734f98a9c28f05d6083221~mv2.png" alt="Checkmark Audio Course Guide Cover">
+  </div>
+</section>
+
+
+
+    <!-- Contact / Enroll -->
+    <section class="contact container animate" id="contact">
+      <h2>Get in Touch</h2>
+      <p>If you have questions or want more info, please fill out the form below and we’ll get back to you right away.</p>
+
+      <div class="contact-methods">
+        <div class="contact-form animate">
+          <!-- Notice: id="contact-form" -->
+          <form id="contact-form">
+            <!-- Name -->
+            <label for="from_name">Your Name</label>
+            <input type="text" id="from_name" name="from_name" required />
+
+            <!-- Email -->
+            <label for="from_email">Your Email</label>
+            <input type="email" id="from_email" name="from_email" required />
+
+            <!-- Phone -->
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" />
+
+            <!-- Message -->
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Optionally, you can still keep a “Call Us” box or location info here if you like -->
+        <div class="contact-info animate">
+          <h3>Call Us</h3>
+          <a href="tel:+15052670558" class="btn">📞 (505) 267-0558</a>
+
+          <h3>Visit Our Studio</h3>
+          <p>5413 Lomas Blvd. NE, Albuquerque, NM 87112</p>
+          <a href="https://goo.gl/maps/YourMapLink" target="_blank">View on Google Maps</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Embedded Map -->
+    <section class="map-embed">
+      <iframe
+        src="https://www.google.com/maps?q=5413+Lomas+Blvd.+NE+Albuquerque+NM+87112&output=embed"
+        width="100%" height="450" frameborder="0" style="border:0;"
+        allowfullscreen="" loading="lazy">
+      </iframe>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2025 Checkmark Audio School</p>
+    </div>
+  </footer>
+</body>
+</html>

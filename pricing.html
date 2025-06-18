@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pricing & Enrollment | CHECKMARK SCHOOL OF AUDIO</title>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- EmailJS SDK & init -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("N5UpWeOs8jdOTQitf");
+    })();
+  </script>
+
+  <!-- Your main JS -->
+  <script src="js/scripts.js" defer></script>
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo animate">
+        <img src="https://static.wixstatic.com/media/afbb39_c0cc5475424d43e2ae4578ad74623c72~mv2.png" alt="Checkmark Audio Logo" class="logo-icon animate" />
+        CHECKMARK SCHOOL OF AUDIO
+      </a>
+      <nav>
+        <ul>
+          <li class="animate"><a href="index.html">Home</a></li>
+          <li class="animate"><a href="about.html">About Us</a></li>
+          <li class="animate"><a href="programs.html">Programs</a></li>
+          <li class="animate"><a href="curriculum.html">Curriculum</a></li>
+          <li class="animate"><a href="pricing.html" class="active">Pricing</a></li>
+          <li class="animate"><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Pricing & Enrollment -->
+    <section id="pricing" class="container animate">
+      <h2>Pricing & Enrollment</h2>
+      <p>
+        Invest in your future with hands-on studio training. Pick a focused 2-month module
+        or dive into our full 6-month program—designed for aspiring pros and serious hobbyists.
+      </p>
+
+      <!-- Pricing Cards -->
+      <div class="pricing-grid">
+        <!-- 6-Month Complete Course -->
+        <div class="pricing-card animate">
+          <h3>6-Month Complete Course</h3>
+          <p class="pricing-length">48 sessions (2×/week, 2–4 hrs/session)</p>
+          <p class="pricing-price">$8,500</p>
+          <p class="pricing-note">
+            Save 15% vs. à la carte pricing &mdash; includes 3 bonus 1:1 mentoring calls
+          </p>
+          <button class="btn btn-pricing open-modal"
+                  data-course="6-Month Complete Course">
+            Enroll Now
+          </button>
+        </div>
+
+        <!-- 2-Month Module -->
+        <div class="pricing-card animate">
+          <h3>2-Month Module</h3>
+          <p class="pricing-length">16 sessions (2×/week, 2–4 hrs/session)</p>
+          <p class="pricing-price">$3,000</p>
+          <button class="btn btn-pricing open-modal"
+                  data-course="2-Month Module">
+            Enroll Now
+          </button>
+        </div>
+      </div>
+
+      <!-- Discounts & Payment Plans -->
+      <div class="info-grid animate">
+        <div class="info-card">
+          <h3>Early-Bird Discount</h3>
+          <p>Save <strong>10%</strong> when you enroll 30+ days before your start date.</p>
+        </div>
+        <div class="info-card">
+          <h3>Installment Plan</h3>
+          <p>Split tuition into 4 interest-free monthly payments. Choose installments at checkout.</p>
+        </div>
+        <div class="info-card">
+          <h3>Flexible Scheduling</h3>
+          <p>Evening &amp; weekend sessions available—perfect for working students.</p>
+        </div>
+        <div class="info-card full-width">
+          <h3>How to Enroll</h3>
+          <ol class="step-list">
+            <li>Click <strong>Enroll Now</strong> on the program of your choice.</li>
+            <li>Fill out the quick form (Name, Email, Phone, Course).</li>
+            <li>Submit your deposit via credit card or bank transfer.</li>
+            <li>Receive your welcome packet &amp; detailed schedule.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Enrollment Modal -->
+  <div class="modal-overlay" id="enroll-modal">
+    <div class="modal animate">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <h2>Enroll Now</h2>
+      <form id="enroll-form">
+        <input type="hidden" id="course-selected" name="course" value="" />
+
+        <label for="student-name">Your Name</label>
+        <input type="text" id="student-name" name="name" required />
+
+        <label for="student-email">Your Email</label>
+        <input type="email" id="student-email" name="email" required />
+
+        <label for="student-phone">Phone Number</label>
+        <input type="tel" id="student-phone" name="phone" />
+
+        <label for="student-message">Additional Message</label>
+        <textarea id="student-message" name="message" rows="4"></textarea>
+
+        <button type="submit" class="btn">Submit Enrollment Info</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2025 CHECKMARK SCHOOL OF AUDIO</p>
+    </div>
+  </footer>
+</body>
+</html>
