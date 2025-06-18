@@ -594,41 +594,47 @@ textarea:focus {
     grid-template-columns: 1fr;
   }
 }
-/* ============================================================================
-   GALLERY PAGE STYLES
-   (Paste this at the end of your existing styles.css)
-   ============================================================================ */
-
-/* --------------------------------------------------
-   1. HERO BANNER
-   -------------------------------------------------- */
+/* ============================
+   GALLERY HERO BANNER
+   ============================ */
 .gallery-hero {
-  position: relative;
-  height: 40vh; /* adjust if you want taller/shorter */
+  /* kill the default section padding */
+  padding: 0;
+
+  /* size & centering */
+  height: 40vh;           /* or 50vh / 60vh as you prefer */
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Background image: replace with your own in HTML/CSS as needed */
-  background: url('../images/gallery-hero.jpg') center center/cover no-repeat;
+
+  /* background image + dark overlay baked in */
+  background:
+    url('https://static.wixstatic.com/media/afbb39_eda81a5a49f7438caa991699a2db3991~mv2.jpg')
+      center center / cover no-repeat;
+  position: relative;
   color: #fff;
   text-align: center;
 }
 .gallery-hero .overlay {
   position: absolute;
-  inset: 0; /* top:0; right:0; bottom:0; left:0; */
-  background: rgba(0, 0, 0, 0.5); /* semi-dark overlay */
-  z-index: 1;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
 }
 .gallery-hero .container {
   position: relative; /* sit above the overlay */
-  z-index: 2;
+  z-index: 1;
 }
 .gallery-hero h1 {
   font-size: 3rem;
   font-weight: var(--fw-bold);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
   margin: 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
 }
+@media (max-width: 768px) {
+  .gallery-hero { height: 30vh; }
+  .gallery-hero h1 { font-size: 2.25rem; }
+}
+
 
 /* --------------------------------------------------
    2. GRID CONTAINERS & CARD BASICS
@@ -1116,4 +1122,40 @@ textarea:focus {
     margin-top: calc(var(--space-unit) * 4);
   }
 }
+@media (max-width: 768px) {
+  nav ul {
+    flex-wrap: wrap;            /* allow items to drop to a new line */
+    justify-content: center;    /* center them nicely */
+    gap: calc(var(--space-unit) * 2); /* a little more breathing room */
+  }
+  
+  /* optional: tighten up each link’s margin so it doesn’t stretch too far */
+  nav li {
+    margin: calc(var(--space-unit) * 1) 0;
+  }
+}
+@media (max-width: 768px) {
+  /* Stack and center the lead‐form children */
+  .lead-form {
+    flex-direction: column;
+    align-items: center;    /* center both the text and image */
+    text-align: center;     /* center the headings & button */
+  }
+
+  /* Remove any horizontal shifts you added */
+  .lead-content,
+  .lead-image {
+    transform: none !important;
+    margin: 0 auto !important;
+  }
+
+  /* Ensure the image itself is centered */
+  .lead-image img {
+    margin: 0 auto !important;
+    transform: none !important;
+    max-width: 80%;         /* so it never overflows the screen */
+    width: auto;
+  }
+}
+
 
