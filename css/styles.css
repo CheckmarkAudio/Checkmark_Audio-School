@@ -1157,5 +1157,10 @@ textarea:focus {
     width: auto;
   }
 }
-
+/* Center PayPal button via flexbox */
+#paypal-container-D8PFLJPRMXWRN {
+  display: flex;
+  justify-content: center;
+  margin: calc(var(--space-unit) * 4) 0;
+}
 
