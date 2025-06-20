@@ -1157,10 +1157,3 @@ textarea:focus {
     width: auto;
   }
 }
-#paypal-container-D8PFLJPRMXWRN {
-  text-align: center;
-  margin: calc(var(--space-unit) * 4) 0;
-}
-#paypal-container-D8PFLJPRMXWRN > div {
-  display: inline-block; /* make the actual button inline so it responds to text-align */
-}
