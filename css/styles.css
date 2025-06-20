@@ -1157,10 +1157,16 @@ textarea:focus {
     width: auto;
   }
 }
-/* Center PayPal button via flexbox */
-#paypal-container-D8PFLJPRMXWRN {
-  display: block;
+/* Center the PayPal button wrapper via flexbox */
+.paypal-wrapper {
+  display: flex;
   justify-content: center;
-  margin: calc(var(--space-unit) * 4) 0;
+  margin: calc(var(--space-unit) * 4) 0; /* vertical spacing */
 }
+/* Ensure the inner container just sizes to the button */
+#paypal-container-D8PFLJPRMXWRN {
+  display: inline-block;
+}
+}
+
 
