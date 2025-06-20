@@ -1157,3 +1157,10 @@ textarea:focus {
     width: auto;
   }
 }
+/* Center the PayPal hosted‐button */
+#paypal-container-D8PFLJPRMXWRN {
+  display: flex;
+  justify-content: center;
+  margin: calc(var(--space-unit) * 4) 0; /* adds some top/bottom breathing room */
+}
+
