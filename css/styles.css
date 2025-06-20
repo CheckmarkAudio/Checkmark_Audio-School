@@ -1157,6 +1157,13 @@ textarea:focus {
     width: auto;
   }
 }
-
+.paypal-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: calc(var(--space-unit) * 4) 0;
+}
+#paypal-container-D8PFLJPRMXWRN {
+  display: inline-block;
+}
 
 
