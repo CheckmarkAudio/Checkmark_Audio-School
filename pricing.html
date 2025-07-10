@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pricing & Enrollment | CHECKMARK SCHOOL OF AUDIO</title>
+  <title>Admissions & Enrollment | CHECKMARK SCHOOL OF AUDIO</title>
 
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="css/styles.css" />
@@ -11,130 +11,425 @@
   <!-- EmailJS SDK & init -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
-    (function(){
-      emailjs.init("N5UpWeOs8jdOTQitf");
-    })();
+    emailjs.init("N5UpWeOs8jdOTQitf");
   </script>
 
-  <!-- Your main JS -->
+  <!-- Inline styles for the application form card (reuses .modal & .modal-overlay from your CSS) -->
+  <style>
+    /* We're only styling the card inside the modal here */
+    #application-modal .card {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+    }
+    #application-modal .card-header {
+      background-color: #FFD700;
+      padding: 20px;
+      text-align: center;
+    }
+    #application-modal .card-header h1 {
+      margin: 0;
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    #application-modal .card-body {
+      padding: 30px;
+      color: #333;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    #application-modal .card-body input,
+    #application-modal .card-body select,
+    #application-modal .card-body textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+      box-sizing: border-box;
+      margin-top: 4px;
+      margin-bottom: 16px;
+    }
+    #application-modal .card-footer {
+      background: #f9f9f9;
+      padding: 15px 30px;
+      text-align: center;
+    }
+    #application-modal .card-footer button {
+      background: #FFD700;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    #application-modal .card-footer button:hover {
+      background: #e6b800;
+    }
+    /* Close button */
+    #application-modal .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 1.25rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+/* Ensure the overlay scrolls if the modal is too tall */
+.modal-overlay {
+  /* allow vertical scrolling */
+  overflow-y: auto;
+  /* pin modal near top so users can scroll up/down */
+  align-items: flex-start !important;
+  padding: 40px 0;
+}
+
+/* Constrain the modal’s height to the viewport & make its contents scroll if needed */
+.modal {
+  max-height: 90vh;     /* never exceed 90% of viewport height */
+  overflow-y: auto;     /* scroll within the modal */
+  margin: auto;         /* center horizontally */
+}
+/* — Admissions Hero (reuse .hero base) — */
+.admissions-hero {
+  /* swap in your own image URL here: */
+  background:
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url('https://static.wixstatic.com/media/afbb39_c5841870167146158eb5f93b2601a269~mv2.jpg') center center/cover no-repeat;
+  height: 50vh;            /* adjust as you like */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+.admissions-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+.admissions-hero .container {
+  position: relative;
+  z-index: 1;
+  color: #FFF;
+  max-width: 800px;
+}
+.admissions-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+}
+.admissions-hero p {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+.admissions-hero .btn {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+}
+@media (max-width: 768px) {
+  .admissions-hero {
+    height: 50vh;
+    padding: 0 calc(var(--space-unit) * 2);
+  }
+  .admissions-hero h1 { font-size: 2rem; }
+  .admissions-hero p  { font-size: 1rem; }
+}
+
+
+  </style>
+
+  <!-- Your existing JS -->
   <script src="js/scripts.js" defer></script>
 </head>
 <body>
-  
-  <!-- Header & Navigation -->
+  <!-- Header & Nav (unchanged) -->
   <header>
     <div class="container header-inner">
       <a href="index.html" class="logo animate">
-        <img src="https://static.wixstatic.com/media/afbb39_c0cc5475424d43e2ae4578ad74623c72~mv2.png" alt="Checkmark Audio Logo" class="logo-icon animate" />
+        <img src="https://static.wixstatic.com/media/afbb39_c0cc5475424d43e2ae4578ad74623c72~mv2.png" alt="Logo" class="logo-icon animate" />
         CHECKMARK SCHOOL OF AUDIO
       </a>
       <nav>
         <ul>
-          <li class="animate"><a href="index.html">Home</a></li>
-          <li class="animate"><a href="about.html">About Us</a></li>
-          <li class="animate"><a href="programs.html">Programs</a></li>
-          <li class="animate"><a href="curriculum.html">Curriculum</a></li>
-          <li class="animate"><a href="pricing.html" class="active">Pricing</a></li>
-          <li class="animate"><a href="gallery.html">Gallery</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="curriculum.html">Curriculum</a></li>
+          <li><a href="pricing.html" class="active">Admissions</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- Pricing & Enrollment -->
-    <section id="pricing" class="container animate">
-      <h2>Pricing & Enrollment</h2>
-      <p>
-        Invest in your future with hands-on studio training. Pick a focused 2-month module
-        or dive into our full 6-month program—designed for aspiring pros and serious hobbyists.
+   <!-- ============================
+     ADMISSIONS HERO
+ ============================ -->
+<section class="hero admissions-hero animate">
+  <div class="overlay"></div>
+  <div class="container">
+    <h1>Welcome to Checkmark Audio School Admissions!</h1>
+    <p>
+      You’ve taken an exciting step toward your audio career.  
+      At Checkmark Audio School, we’ll guide you every beat of the way—your passion is our passion.  
+      Let’s make your creative dreams a reality.
+    </p>
+    <a href="#admissions-application" class="btn">Apply Now</a>
+  </div>
+</section>
+
+
+<!-- Get Started Today -->
+<section id="get-started" class="container animate">
+  <h2>Get Started Today</h2>
+  <p>Enroll anytime—no fixed application windows. Start when you’re ready and tailor your schedule to fit your life.</p>
+
+  <div class="pricing-grid">
+    <!-- 6-Month Complete Course -->
+    <div class="pricing-card animate">
+      <h3>6-Month Complete Course</h3>
+      <p class="pricing-length">48 sessions (2×/week, 4 hrs/session)</p>
+      <p class="pricing-price">$8 500</p>
+      <p class="pricing-note">
+        Perfect for students who want an end-to-end, immersive studio experience.
       </p>
+      <button class="btn btn-pricing open-application">Apply Now</button>
+    </div>
 
-      <!-- Pricing Cards -->
-      <div class="pricing-grid">
-        <!-- 6-Month Complete Course -->
-        <div class="pricing-card animate">
-          <h3>6-Month Complete Course</h3>
-          <p class="pricing-length">48 sessions (2×/week, 4 hrs/session)</p>
-          <p class="pricing-price">$8,500</p>
-          <p class="pricing-note">
-            Save 15% vs. à la carte pricing &mdash; includes 3 bonus 1:1 mentoring calls
-          </p>
-          <button class="btn btn-pricing open-modal"
-                  data-course="6-Month Complete Course">
-            Enroll Now
+    <!-- 2-Month Module -->
+    <div class="pricing-card animate">
+      <h3>2-Month Module</h3>
+      <p class="pricing-length">16 sessions (2×/week, 2–4 hrs/session)</p>
+      <p class="pricing-price">$3 000</p>
+      <p class="pricing-note">
+        Great if you’re looking to sharpen one discipline in a focused timeframe.
+      </p>
+      <button class="btn btn-pricing open-application">Apply Now</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================
+     ENROLLMENT JOURNEY
+ ============================ -->
+
+<section id="enrollment-journey" class="container animate">
+  <h2>Your Enrollment Journey</h2>
+  <div class="journey-layout">
+
+    <!-- LEFT: Accordion Steps -->
+    <div class="journey-steps">
+      <div class="accordion-group steps-accordion">
+        <!-- Step 1 -->
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            Step 1: Fill Out the Interest Form
           </button>
+          <div class="accordion-content">
+            <p><strong>Overview:</strong> Your journey starts by letting us know you're interested. This form helps us get to know you and make sure Checkmark Audio School is the right fit for your goals.</p>
+            <ul>
+              <li>Fill out your name, email, and a few questions about your experience and goals.</li>
+              <li>Select full tuition or payment plan.</li>
+              <li>Our team reviews your info and reaches out within 48 hours to schedule a consultation.</li>
+            </ul>
+          </div>
         </div>
-
-        <!-- 2-Month Module -->
-        <div class="pricing-card animate">
-          <h3>2-Month Module</h3>
-          <p class="pricing-length">16 sessions (2×/week, 2–4 hrs/session)</p>
-          <p class="pricing-price">$3,000</p>
-          <button class="btn btn-pricing open-modal"
-                  data-course="2-Month Module">
-            Enroll Now
+        <!-- Step 2 -->
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            Step 2: Book a Free Consultation
           </button>
+          <div class="accordion-content">
+            <p><strong>Overview:</strong> Meet with a member of our team to talk through the course, your goals, and how we can help.</p>
+            <ul>
+              <li>Choose a time for an in-person or virtual meeting.</li>
+              <li>We walk you through curriculum details and answer questions.</li>
+              <li>If you’re a good fit, you’ll be invited to officially enroll.</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Step 3 -->
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            Step 3: Choose Payment &amp; Submit Deposit
+          </button>
+          <div class="accordion-content">
+            <p><strong>Overview:</strong> Select your payment method—pay in full or finance through our in-house plan.</p>
+            <ul>
+              <li>Review tuition total and any gear/software add-ons.</li>
+              <li>Choose full payment or in-house plan (10% down, 10% interest).</li>
+              <li>Submit 10% deposit to reserve your spot.</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Step 4 -->
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            Step 4: Complete the Enrollment Agreement
+          </button>
+          <div class="accordion-content">
+            <p><strong>Overview:</strong> After payment, sign our official Enrollment Agreement to secure your spot and access onboarding materials.</p>
+            <ul>
+              <li>Read the Student Enrollment Agreement (policies, refund terms, etc.).</li>
+              <li>Electronically sign or submit a paper copy.</li>
+              <li>Receive your syllabus, class schedule, and onboarding checklist.</li>
+            </ul>
+          </div>
         </div>
       </div>
+    </div>
 
-      <!-- Discounts & Payment Plans -->
-      <div class="info-grid animate">
-        <div class="info-card">
-          <h3>Grand Opening Special</h3>
-          <p>Save <strong>$1000</strong> when you enroll in the complete course in our first month.</p>
-        </div>
-        <div class="info-card">
-          <h3>Installment Plan</h3>
-          <p>Split tuition into interest-free monthly payments.</p>
-        </div>
-        <div class="info-card">
-          <h3>Flexible Scheduling</h3>
-          <p>Evening &amp; weekend sessions available—perfect for working students.</p>
-        </div>
-        <div class="info-card full-width">
-          <h3>How to Enroll</h3>
-          <ol class="step-list">
-            <li>Click <strong>Enroll Now</strong> on the program of your choice.</li>
-            <li>Fill out the quick form (Name, Email, Phone, Course).</li>
-            <li>Submit your deposit via credit card or bank transfer.</li>
-            <li>Receive your welcome packet &amp; detailed schedule.</li>
-          </ol>
+    <!-- RIGHT: Accordion Financing & Loan Options -->
+    <div class="journey-finance">
+      <div class="accordion-group finance-accordion">
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            Financing &amp; Loan Options
+          </button>
+          <div class="accordion-content">
+            <h4>In-House Payment Plan</h4>
+            <ul>
+              <li>Pay <strong>20% down</strong> upfront to reserve your spot.</li>
+              <li>Finance the remaining <strong>80%</strong> over your course duration.</li>
+              <li>A <strong>10% interest rate</strong> applies to the financed amount.</li>
+              <li>Monthly installments begin on your program start date.</li>
+            </ul>
+
+            <h4>Other Loan Options You Can Explore</h4>
+            <ul>
+              <li><strong>Federal PLUS Loans</strong> (for parents/graduates)—apply at <a href="https://studentaid.gov" target="_blank">studentaid.gov</a>.</li>
+              <li><strong>Private Education Loans</strong> via banks (Sallie Mae, Discover)—compare APRs and terms.</li>
+              <li><strong>Personal Loans</strong> from credit unions or online lenders.</li>
+              <li><strong>Credit Card Financing</strong> (0% APR promos)—watch for post-promo rates.</li>
+              <li><strong>Scholarships &amp; Grants</strong>—search local and national opportunities specific to audio programs.</li>
+            </ul>
+
+            <p><em>You may pay off any financed balance early without penalty.</em></p>
+          </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
 
-  <!-- Enrollment Modal -->
-  <div class="modal-overlay" id="enroll-modal">
+  </div>
+</section>
+
+
+
+  <!-- ===== Modal Popup for Application Form ===== -->
+  <div class="modal-overlay" id="application-modal" style="display:none; align-items:center; justify-content:center;">
     <div class="modal animate">
-      <button class="modal-close" id="modal-close">&times;</button>
-      <h2>Enroll Now</h2>
-      <form id="enroll-form">
-        <input type="hidden" id="course-selected" name="course" value="" />
-
-        <label for="student-name">Your Name</label>
-        <input type="text" id="student-name" name="name" required />
-
-        <label for="student-email">Your Email</label>
-        <input type="email" id="student-email" name="email" required />
-
-        <label for="student-phone">Phone Number</label>
-        <input type="tel" id="student-phone" name="phone" />
-
-        <label for="student-message">Additional Message</label>
-        <textarea id="student-message" name="message" rows="4"></textarea>
-
-        <button type="submit" class="btn">Submit Enrollment Info</button>
-      </form>
+      <button class="modal-close" id="application-close">&times;</button>
+      <div class="card">
+        <div class="card-header">
+          <h1>Enrollment Application</h1>
+        </div>
+        <div class="card-body">
+          <p>Please complete all fields marked with *</p>
+          <form id="admission-form">
+            <label>Full Name *</label>
+            <input type="text" id="applicant-name" name="applicant_name" required>
+            <label>Email *</label>
+            <input type="email" id="applicant-email" name="applicant_email" required>
+            <label>Phone *</label>
+            <input type="tel" id="applicant-phone" name="applicant_phone" required>
+            <label>Desired Start Date *</label>
+            <input type="date" id="start-date" name="start_date" required>
+            <label>Program Choice *</label>
+            <select id="course-choice" name="course_choice" required>
+              <option value="" disabled selected>Select…</option>
+              <option>2-Month Production Module</option>
+              <option>2-Month Recording Module</option>
+              <option>2-Month Mixing &amp; Mastering</option>
+              <option>6-Month Complete Course</option>
+            </select>
+            <label>How did you hear about us?</label>
+            <select id="heard-about" name="heard_about">
+              <option value="" disabled selected>Select…</option>
+              <option>Web Search</option>
+              <option>Friend/Family</option>
+              <option>Social Media</option>
+              <option>Other</option>
+            </select>
+            <label>Address *</label>
+            <input type="text" id="applicant-address" name="applicant_address" required>
+            <label>City *</label>
+            <input type="text" id="applicant-city" name="applicant_city" required>
+            <label>State *</label>
+            <input type="text" id="applicant-state" name="applicant_state" required>
+            <label>Zip Code *</label>
+            <input type="text" id="applicant-zip" name="applicant_zip" required>
+            <label>Education History</label>
+            <textarea id="education-history" name="education_history" rows="3"></textarea>
+            <label>Career Goals</label>
+            <textarea id="career-goals" name="career_goals" rows="3"></textarea>
+          </form>
+        </div>
+        <div class="card-footer">
+          <button type="submit" form="admission-form">Submit Application</button>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- Footer (unchanged) -->
   <footer>
     <div class="container">
       <p>© 2025 CHECKMARK SCHOOL OF AUDIO</p>
     </div>
   </footer>
+
+  <!-- Popup + EmailJS Logic -->
+  <script>
+    // open/close handlers
+    document.querySelectorAll('.open-application').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.getElementById('application-modal').style.display = 'flex';
+      });
+    });
+    document.getElementById('application-close').addEventListener('click', () => {
+      document.getElementById('application-modal').style.display = 'none';
+    });
+
+    // send form via EmailJS
+    document.getElementById('admission-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const params = {
+        applicant_name:    document.getElementById('applicant-name').value.trim(),
+        applicant_email:   document.getElementById('applicant-email').value.trim(),
+        applicant_phone:   document.getElementById('applicant-phone').value.trim(),
+        start_date:        document.getElementById('start-date').value,
+        course_choice:     document.getElementById('course-choice').value,
+        heard_about:       document.getElementById('heard-about').value,
+        applicant_address: document.getElementById('applicant-address').value.trim(),
+        applicant_city:    document.getElementById('applicant-city').value.trim(),
+        applicant_state:   document.getElementById('applicant-state').value.trim(),
+        applicant_zip:     document.getElementById('applicant-zip').value.trim(),
+        education_history: document.getElementById('education-history').value.trim(),
+        career_goals:      document.getElementById('career-goals').value.trim()
+      };
+      emailjs.send('service_jdvioa3','template_fpdet3i',params)
+        .then(() => {
+          alert('Thanks! Your application has been submitted.');
+          e.target.reset();
+          document.getElementById('application-modal').style.display = 'none';
+        })
+        .catch(err => {
+          console.error(err);
+          alert('Oops—something went wrong. Please try again.');
+        });
+    });
+  </script>
 </body>
 </html>
