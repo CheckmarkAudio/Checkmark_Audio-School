@@ -226,4 +226,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+// Enrollment Journey & Finance Accordion (toggle open/close)
+document.addEventListener('DOMContentLoaded', () => {
+  ['.steps-accordion', '.finance-accordion'].forEach(groupClass => {
+    const headers = document.querySelectorAll(
+      `#enrollment-journey ${groupClass} .accordion-header`
+    );
+    headers.forEach(header => {
+      header.addEventListener('click', () => {
+        // 1) capture whether this panel is already open
+        const wasOpen = header.getAttribute('aria-expanded') === 'true';
+
+        // 2) collapse all panels in this group
+        headers.forEach(h2 => {
+          h2.setAttribute('aria-expanded', 'false');
+          h2.nextElementSibling.style.maxHeight = null;
+        });
+
+        // 3) if it was closed before click, open it now
+        if (!wasOpen) {
+          header.setAttribute('aria-expanded', 'true');
+          const content = header.nextElementSibling;
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
+      });
+    });
+  });
+});
 
