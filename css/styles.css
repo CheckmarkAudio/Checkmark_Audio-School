@@ -1235,7 +1235,6 @@ textarea:focus {
 .finance-accordion .accordion-content {
   padding-top: 0;
 }
-}
 /* Footer inner wrapper (if you don’t already have one) */
 .footer-inner {
   display: flex;
@@ -1374,3 +1373,4 @@ textarea:focus {
     margin-bottom: calc(var(--space-unit) * 4);
   }
 }
+
