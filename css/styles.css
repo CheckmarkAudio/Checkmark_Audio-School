@@ -1235,5 +1235,142 @@ textarea:focus {
 .finance-accordion .accordion-content {
   padding-top: 0;
 }
+}
+/* Footer inner wrapper (if you don’t already have one) */
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-unit);
+}
 
+/* BBB logo styling */
+.bbb-logo img {
+  max-height: 50px;       /* adjust as you like */
+  width: auto;
+  display: block;
+}
+/* in styles.css */
+.bbb-highlight {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  padding: calc(var(--space-unit)*1) 0;
+  text-align: center;
+}
+.bbb-highlight img {
+  height: 50px;
+  vertical-align: middle;
+  margin-right: calc(var(--space-unit)*2);
+}
+.bbb-highlight p {
+  display: inline-block;
+  font-size: 1.125rem;
+  font-weight: var(--fw-semibold);
+  vertical-align: middle;
+  margin: 0;
+}
 
+/* add this to the end of styles.css */
+
+/* Replace or append this after your existing .bbb-highlight rules */
+
+/* Turn the container into a centered flex row */
+.bbb-highlight .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--space-unit) * 2); /* space between logo and text */
+  text-align: left; /* let flex handle alignment */
+}
+
+/* Reset the paragraph to remove any block/inline hacks */
+.bbb-highlight p {
+  display: block;
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary);
+}
+/* — Footer Styles — */
+.site-footer {
+  background: var(--color-charcoal);
+  color: #EEE;
+  font-size: 0. nine5rem;
+  line-height: 1.6;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: calc(var(--space-unit) * 4);
+  padding: calc(var(--space-unit) * 8) 0;
+}
+.footer-about .footer-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-unit);
+  margin-bottom: var(--space-unit);
+}
+.footer-about .footer-logo img {
+  width: 32px;
+  height: auto;
+}
+.footer-about .footer-logo span {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h3);
+  color: #FFF;
+}
+.footer-about p {
+  color: #CCC;
+}
+.footer-links h4,
+.footer-contact h4,
+.footer-bbb h4 {
+  color: var(--color-accent);
+  margin-bottom: var(--space-unit);
+  font-size: var(--fs-h3);
+}
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-links ul li {
+  margin-bottom: calc(var(--space-unit) * 0.75);
+}
+.footer-links ul li a {
+  color: #EEE;
+  transition: color var(--trans-fast);
+}
+.footer-links ul li a:hover {
+  color: var(--color-accent);
+}
+.footer-contact p,
+.footer-contact a {
+  color: #CCC;
+  text-decoration: none;
+}
+.footer-contact a:hover {
+  color: var(--color-accent);
+}
+.footer-bbb img {
+  max-width: 120px;
+  display: block;
+  margin-top: var(--space-unit);
+}
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding: calc(var(--space-unit) * 2) 0;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #777;
+}
+
+/* Responsive tweak */
+@media (max-width: 480px) {
+  .footer-grid {
+    text-align: center;
+  }
+  .footer-about, .footer-links, .footer-contact, .footer-bbb {
+    margin-bottom: calc(var(--space-unit) * 4);
+  }
+}
