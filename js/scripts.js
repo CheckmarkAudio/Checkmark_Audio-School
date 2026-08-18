@@ -46,9 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
   //
   const header = document.querySelector('header');
   const shrinkOn = 100;
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('shrink', window.scrollY > shrinkOn);
-  });
+  if (header) {
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('shrink', window.scrollY > shrinkOn);
+    }, { passive: true });
+  }
 
   //
   // C) MOBILE NAV TOGGLE (unchanged)
@@ -56,13 +58,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.getElementById('mobile-menu-toggle');
   const navMenu    = document.querySelector('nav ul');
   if (menuToggle && navMenu) {
+    const closeMenu = () => {
+      navMenu.classList.remove('open');
+      menuToggle.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Open navigation menu');
+    };
+
     menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
+      const isOpen = navMenu.classList.toggle('open');
+      menuToggle.classList.toggle('open', isOpen);
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
     });
     navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-      });
+      link.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeMenu();
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) closeMenu();
     });
   }
 
@@ -253,4 +269,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-
